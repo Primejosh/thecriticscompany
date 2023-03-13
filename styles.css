@@ -1,0 +1,942 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+html::-webkit-scrollbar-track {
+    background: #fff;
+}
+html::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+body{
+    position: relative;
+    background-color: #000;
+    color: #fff;
+}
+body section#pc {
+    display: none;
+}
+header{
+    width: 100%;
+    height: 94vh;
+    position: relative;
+}
+.header{
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+.blur1 {
+    filter: blur(10px);
+}
+button{
+    cursor: pointer;
+}
+
+header p.popside {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    font-size: 3rem;
+    border-radius: 8px;
+}
+header .overlay,
+header .overlay001{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header .overlay001{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+header .overlay001 .logo {
+    width: 350px;
+    height: 210px;
+    position: sticky;
+    top: 50px;
+}
+header .overlay001 .logo img {
+    width: 100%;
+    height: 100%;
+    filter: invert(100%) sepia(0%) saturate(27%) hue-rotate(38deg) brightness(106%) contrast(107%);
+    object-fit: cover;
+}
+header nav {
+    padding: 30px;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999;
+}
+header nav button {
+    color: #fff;
+    background-color: transparent;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 900;
+}
+header nav p {
+    font-size: 2rem;
+    color: transparent;
+}
+header nav .stuff {
+    background-color: rgba(0, 0, 0, 0.884);
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    clip-path: polygon(5% 0, 100% 0, 100% 0, 0 0, 0 10%, 0 0);
+    z-index: 100;
+    transition: all .3s;
+}
+header nav .stuff.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+header nav .stuff a{
+    font-size: 3rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.719);
+    margin-bottom: 2rem;
+}
+header nav .stuff a:hover {
+    color: #fff;
+}
+header nav .stuff a p {
+    position: absolute;
+    font-size: 10rem;
+    color: rgba(255, 255, 255, 0.277);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Contrail One', cursive;
+    z-index: -1;
+    display: inline;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+header nav .stuff a.youtube{
+    color: #f00;
+    font-size: 4rem;
+}
+header nav .stuff a.home:hover p.home1 {
+    display: block;
+}
+header nav .stuff a.about:hover p.about1 {
+    display: block;
+}
+header nav .stuff a.youtube:hover p.youtube1 {
+    display: block;
+}
+header nav .stuff a.films:hover p.films1 {
+    display: block;
+}
+header section.home{
+    margin-top: 150px;
+    width: 100%;
+    height: calc(100vh - 150px);
+    position: relative;
+}
+header section.home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main section {
+    text-align: center;
+    padding: 30px 10px;
+}
+main section.about {
+    width: 100%;
+    text-align: left;
+}
+main section h2,
+main section.about section.bio.active h2,
+footer .grid-container .grid-items.one .h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-align: center;
+}
+main section.about section.bio.active h2{
+    margin-bottom: 1.5rem;
+}
+main section.about .flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.7rem;
+    padding-top: 20px;
+}
+main section.about .flex-container .flex-item{
+    width: 100%;
+}
+main section.about .flex-container .flex-item.one {
+    height: auto;
+    text-align: left;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+main section.about .flex-container .flex-item.one p {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
+}
+main section.about .flex-container .flex-item.one p span{
+    text-transform: uppercase;
+}
+main section.about .flex-container .flex-item.two{
+    width: 100%;
+    height: 400px;
+}
+main section.about .flex-container .flex-item.two img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 79%);
+    z-index: -1;
+}
+main section.about button.see--more{
+    background-color: transparent;
+    font-size: 1.7rem;
+    color: #fff;
+    text-align: left;
+}
+main section.about section.bio {
+    text-align: left;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    height: 1px;
+    padding: 0;
+    transition: all .3s;
+}
+main section.about section.bio h2{
+    font-size: 1rem;
+}
+main section.about section.bio.active {
+    padding: 30px;
+    height: auto;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+main section.about section.bio .flex--container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    gap: 20px;
+}
+main section.about section.bio.active .flex--container .flex--item{
+    width: 100%;
+    height: 400px;
+    font-size: 1.7rem;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main section.about section.bio.active .flex--container .flex--item .img--container{
+    width: 100%;
+    height: 100%;
+}
+main section.about section.bio.active .flex--container .flex--item .img--container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+main section.about section.bio .flex--container .flex--item p{
+    text-transform: none;
+    max-height: 350px;
+    overflow-y: scroll;
+}
+main section.about section.bio .flex--container .flex--item p::-webkit-scrollbar {
+    width: .5rem;
+}
+main section.about section.bio .flex--container .flex--item p::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+}
+main section.about section.bio .flex--container .flex--item p::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+main section.about section.bio .flex--container .flex--item p a{
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+main section.about section.bio .flex--container .flex--item p a.one{
+    margin-right: 3rem;
+}
+main section.about section.bio .flex--container.second,
+main section.about section.bio .flex--container.fourth{
+    flex-direction: column-reverse;
+}
+main section.about section.bio button.see--less{
+    background-color: transparent;
+    font-size: 1.7rem;
+    color: #fff;
+    text-align: left;
+}
+main section.contact{
+    padding: 10px;
+}
+main section.contact .flex-contanier{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+main section.contact .flex-contanier .flex-item {
+    width: 50%;
+    height: 100%;
+    width: 100%;
+    height: 50%;
+}
+main section.contact .flex-contanier .flex-item.one{
+    position: relative;
+}
+main section.contact .flex-contanier .flex-item.one .overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+main section.contact .flex-contanier .flex-item.one iframe{
+    width: 100%;
+    height: 100%;
+}
+main section.contact .flex-contanier .flex-item.two h1{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+main section.contact .flex-contanier .flex-item.two .form001{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+main section.contact .flex-contanier .flex-item.two .form001 input,
+main section.contact .flex-contanier .flex-item.two .form001 textarea{
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    width: 80%;
+    height: 150px;
+    font-size: 2rem;
+    color: #fff;
+}
+main section.contact .flex-contanier .flex-item.two .form001 textarea{
+    height: 150px;
+    margin-top: 1rem;
+    resize: horizontal;
+}
+main section.contact .flex-contanier .flex-item.two .form001 ::placeholder{
+    font-size: 2rem;
+}
+main section.contact .flex-contanier .flex-item.two .form001 button {
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    margin-top: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+main section.instagram{
+    padding: 30px 10px;
+}
+main section.instagram .grid-container{
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 300px);
+    grid-gap: 10px;
+    margin-bottom: 3rem;
+}
+main section.instagram .grid-container .grid-items {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+main section.instagram .grid-container .grid-items.img1 {
+    background-image: url("./images/in11.jpg");
+}
+main section.instagram .grid-container .grid-items.vid {
+    background-image: url("./images/f1.jpg");
+}
+main section.instagram .grid-container .grid-items.img2 {
+    background-image: url("./images/in2.jpg");
+}
+main section.instagram .grid-container .grid-items.img3 {
+    background-image: url("./images/in3.jpg");
+}
+main section.instagram .grid-container .grid-items .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main section.instagram .grid-container .grid-items .hover a {
+    opacity: 0;
+    color: rgba(0, 0, 0, 0.432);
+}
+main section.instagram .grid-container .grid-items:hover .hover {
+    background-color: rgba(0, 0, 0, 0.432);
+}
+main section.instagram .grid-container .grid-items:hover .hover a {
+    color: #fff;
+    font-size: 1.8rem;
+    opacity: 1;
+}
+main section.instagram .follow {
+    width: 80%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 2px solid rgba(255, 255, 255, 0.589);
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+    border-right: none;
+}
+main section.instagram .follow i {
+    margin-left: 1rem;
+}
+main section.instagram .follow .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+}
+main section.instagram .follow:hover {
+    color: #000;
+    border-left: none;
+    
+}
+main section.instagram .follow:hover .left{
+    width: 100%;
+}
+
+/*see more tab*/
+main section.seemore .seemore {
+    width: 10%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100 auto;
+    border: 2px solid rgba(255, 255, 255, 0.589);
+    color: #fff;
+    font-size: 1.9rem;
+    position: relative;
+    border-right: none;
+}
+main section.seemore .seemore i {
+    margin-left: 1rem;
+}
+main section.seemore .seemore .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+}
+main section.seemore .seemore:hover {
+    color: #000;
+    border-left: none;
+    
+}
+main section.seemore .seemore:hover .left{
+    width: 100%;
+}
+
+/*end of see more */
+main section.news{
+    padding-top: 20px;
+}
+main section.news iframe{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 2rem;
+    margin-top: 1.2rem;
+}
+main section.news h4{
+    font-size: 3.8rem;
+    margin-bottom: 2rem;
+}
+main section.news .grid-container1{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4,250px);
+    grid-gap: 10px;
+}
+main section.news .grid-container1 .grid-item{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+main section.news .grid-container1 .grid-item a div{
+    width: 100%;
+    height: 100%;
+}
+main section.news .grid-container1 .grid-item a div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main section.news .grid-container1 .grid-item a div div.hoverNews{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.862);
+    z-index: 100;
+    opacity: 0;
+}
+main section.news .grid-container1 .grid-item a div div.hoverNews p {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+main section.news .grid-container1 .grid-item a:hover div.hoverNews{
+    opacity: 1;
+}
+main section.news .grid-container1 .grid-item a:hover div.hoverNews p{
+    font-size: 2rem;
+}
+main section.news .grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(9, 300px);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px;
+}
+main section.news .grid-container .grid-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+main section.news .grid-container .grid-item:hover {
+    transform: translateY(-10px);
+}
+main section.news .grid-container .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main section.films {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 400px);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+main section.films .films-items{
+    width: 100%;
+    height: 100%;
+}
+main section.films .films-items a {
+    width: 100%;
+    height: 100%;
+}
+main section.films .films-items a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+main section.films .films-items:hover {
+    transform: translateY(-10px);
+}
+main section.iframe iframe{
+    width: 100%;
+    height: 70vh;
+}
+main section.iframe .credit {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 0, 0, 0.782);
+    color: rgba(0, 0, 0, 0.782);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+main section.iframe .credit:hover {
+    background-color: #f00;
+    color: #000;
+}
+footer {
+    padding: 30px 10px;
+}
+footer .grid-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 98%);
+    grid-template-rows: repeat(2, 130px);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+}
+footer .grid-container .grid-items {
+    width: 100%;
+    height: 100%;
+}
+footer .grid-container .grid-items.one .h2 {
+    font-size: 2.7rem;
+    margin-bottom: 2rem;
+}
+footer .grid-container .grid-items.one a:hover {
+    font-size: 3.7rem;
+}
+footer .grid-container .grid-items.one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer .grid-container .grid-items.one a {
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: 'Kalam', cursive;
+}
+footer .grid-container .grid-items.two{
+    position: relative;
+}
+footer .grid-container .grid-items.three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    text-align: center;
+}
+footer .grid-container .grid-items.three .grid {
+    margin: 1rem;
+}
+footer .grid-container .grid-items.three .grid a {
+    color: #fff;
+    margin: 0 1rem;
+}
+footer .grid-container .grid-items.three .grid a:hover {
+    font-size: 3rem;
+}
+footer .grid-container .grid-items.three p {
+    color: rgba(255, 255, 255, 0.568);
+    font-family: 'Sue Ellen Francisco', cursive;
+}
+
+
+@media screen and (min-width: 500px){
+    #navPhone {
+        display: none;
+    }
+    body section#pc {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;        
+        position: fixed;
+        width: 100%;
+        height: 75px;
+        background-color: transparent;
+        z-index: 9999999999999999999999999999999999999999999999999999999999999999;
+        padding: 10px 50px;
+    }
+    body section#pc .img{
+        width: 200px;
+        height: 95%;
+    }
+    body section#pc .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    body section#pc .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    body section#pc a {
+        font-size: 1.6rem;
+        color: #000;
+        margin: 2rem;
+    }
+    body section#pc a.fa-youtube{
+        color: #f00;
+        font-size: 5rem;
+    }
+    header{
+        height: 91vh;
+    }
+    footer .grid-container .grid-items h2{
+        font-size: 6rem;
+    }
+    main section {
+        padding: 30px;
+    }
+    
+    main section h2,
+    main section.about section.bio.active h2 {
+        font-size: 3.5rem;
+        /* padding-top: 20px; */
+    }
+    main section.contact {
+        padding: 30px;
+    }
+    main section.contact .flex-contanier .flex-item.two h1{
+        font-size: 3rem;
+    }
+    main section.contact .flex-contanier{
+        flex-direction: row;
+    
+    }
+    main section.contact .flex-contanier .flex-item {
+        width: 50%;
+        height: 100%;
+    }
+    main section.contact .flex-contanier .flex-item.two .form001{
+        height: 80%;
+        justify-content: center;
+    }
+    main section.contact .flex-contanier .flex-item.two .form001 input,
+    main section.contact .flex-contanier .flex-item.two .form001 textarea{
+        height: 100px;
+    }
+    main section.contact .flex-contanier .flex-item.two .form001 textarea{
+        height: 60px;
+    }
+    main section.news iframe{
+        width: 50%;
+    }
+    main section.instagram .follow {
+        width: 480px;
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    main section.instagram{
+        padding: 30px 50px;
+    }
+    main section.instagram .grid-container{
+        grid-template-columns: repeat(2, 48%);
+        grid-template-rows: repeat(2, 300px);
+        justify-content: center;
+        align-items: center;
+    }
+    main section.films {
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(2, 400px);
+    }
+    main section.news .grid-container1{
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2,250px);
+    }
+    main section.news .grid-container {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(5, 300px);
+    }
+
+    footer .grid-container .grid-items.one {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .grid-container .grid-items.three .grid {
+        display: block;
+    }
+    footer .grid-container .grid-items.three .grid a {
+        font-size: 2.3rem;
+    }
+    footer .grid-container .grid-items.three {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+}
+
+@media screen and (min-width: 690px) and (max-width:1080px) {
+    main section.contact .flex-contanier .flex-item.two .form001{
+        height: 70%;
+    }
+}
+
+@media screen and (min-width: 700px){
+    main section h2,
+    main section.about section.bio.active h2 {
+        font-size: 4.5rem;
+    }
+    main section.about section.bio .flex--container.second,
+    main section.about section.bio .flex--container.fourth{
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    main section.about .flex-container .flex-item.two img{
+        object-fit: fill;
+    }
+    main section.about section.bio .flex--container{
+        flex-direction: row;
+    }
+    main section.about section.bio .flex--container .flex--item{
+        width: 50%;
+    }
+    main section.instagram .grid-container{
+        grid-template-columns: repeat(3, 32%);
+        grid-template-rows: repeat(2, 300px);
+    }
+    main section.news .grid-container1{
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: repeat(2,250px);
+    }
+    main section.news .grid-container {
+        grid-template-columns: repeat(3, 32%);
+        grid-template-rows: repeat(3, 300px);
+    }
+    main section.films {
+        grid-template-columns: repeat(3, 32%);
+        grid-template-rows: repeat(2, 400px);
+    }
+    footer .grid-container{
+        grid-template-columns: repeat(2, 48%);
+        grid-template-rows: repeat(1, 300px);
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    main section.about .flex-container {
+        width: 100%;
+        height: 450px;
+        flex-direction: row;
+    }
+    main section.about .flex-container .flex-item.one{
+        width: 50%;
+        height: 100%;
+    }
+    main section.about .flex-container .flex-item.two{
+        width: 50%;
+        height: 100%;
+    }
+    main section.about .flex-container .flex-item.one p {
+        margin-bottom: 0;
+    }
+    main section.about .flex-container .flex-item.two img{
+        object-fit: cover;
+        clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+    main section.instagram .grid-container{
+        grid-template-columns: repeat(4, 24%);
+        grid-template-rows: repeat(1, 300px);
+    }
+    main section.films {
+        grid-template-columns: repeat(4, 24%);
+        grid-template-rows: repeat(1, 400px);
+    }
+    main section.news .grid-container1{
+        grid-template-columns: repeat(4, 24%);
+        grid-template-rows: repeat(1,250px);
+    }
+}
+
+@media screen and (min-width:1080px) {
+    main section.contact .flex-contanier .flex-item.two .form001{
+        height: 85%;
+    }
+}
+/* body{
+    background-color: #00000049;
+} */
